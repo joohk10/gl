@@ -25,11 +25,16 @@ public class indexController {
 	@RequestMapping("/index.do")
 	public String mainPage(@ModelAttribute("testVO")testVO _testVO, 
 			HttpServletRequest request, ModelMap model) throws Exception{
-	
-		Map<String, Object> map = testService.list(_testVO);
 		
+		String type = request.getParameter("type");
+	
+		Map<String, Object> map = testService.list(_testVO);		
 		model.addAttribute("list", map.get("List"));
 		
-		return "main";
+		if( "login".equals(type) ){
+			return "login";
+		}else{
+			return "not_login";
+		}
 	}
 }
