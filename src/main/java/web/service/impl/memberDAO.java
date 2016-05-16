@@ -2,20 +2,20 @@ package web.service.impl;
 
 import java.util.List;
 
-import web.service.testVO;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository("TestDAO")
-public class TestDAO {
+import web.service.memberVO;
+
+@Repository("memberDAO")
+public class memberDAO {
 
 	@Autowired
 	private SqlMapClientTemplate sqlMapClientTemplate;
 	
 	@SuppressWarnings("unchecked")
-	public List<testVO> selectEmpList(testVO _testVO) throws Exception {
-		return sqlMapClientTemplate.queryForList("testDAO.selectEmpList", _testVO);
+	public List<memberVO> selectUser(memberVO _memberVO) throws Exception {
+		return sqlMapClientTemplate.queryForList("memberDAO.selectUser", _memberVO);
 	}
 }

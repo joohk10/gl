@@ -5,7 +5,7 @@
 <div id="mainDiv">
 	<img src="images/img_visual.png" />
 	<div id="loginDiv">
-		<form method="POST" action="process.do">
+		<form method="POST" action="loginAct.do">
 		<input type="text" name="id" id="uId" />
 		<input type="password" name="pw" id="uPw" />
 		<input type="submit" id="loginSubmit" />

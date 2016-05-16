@@ -3,35 +3,30 @@ package web.controller;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-
-import web.service.TestService;
-import web.service.testVO;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class indexController {
-
-	@Autowired
-	protected TestService testService;
 	
 	protected final static Logger log = Logger.getLogger(indexController.class);
 	
 	@RequestMapping("/index.do")
-	public String mainPage(@ModelAttribute("testVO")testVO _testVO, 
-			HttpServletRequest request, ModelMap model) throws Exception{
+	public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{
 		
-		String type = request.getParameter("type");
-	
-		Map<String, Object> map = testService.list(_testVO);		
-		model.addAttribute("list", map.get("List"));
-		
-		if( "login".equals(type) ){
+		HttpSession session = request.getSession();
+		Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
+		if(memInfo != null){
+			String id = memInfo.get("id");
+			String name = memInfo.get("name");
+			
+			model.addAttribute("uId", id);
+			model.addAttribute("uName", name);
+			
 			return "login";
 		}else{
 			return "not_login";

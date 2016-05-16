@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="memberDAO">
+	<typeAlias alias="memberVO" type="web.service.memberVO" />
+	
+	<resultMap id="userList" class="web.service.memberVO">
+		<result property="seq" column="SEQ" />
+		<result property="id" column="ID" />
+		<result property="pw" column="PW" />
+		<result property="name" column="NAME" />
+		<result property="birth" column="BIRTH" />
+		<result property="mlevel" column="MLEVEL" />
+	</resultMap>
+	
+	<select id="memberDAO.selectUser" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from member
+		where id = #id# and pw = #pw#
+	]]>
+	</select>
+</sqlMap>
