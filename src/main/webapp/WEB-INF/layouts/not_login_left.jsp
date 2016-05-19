@@ -6,6 +6,5 @@
 </div>
 
 <div id="timer">
-	<span>오늘의 인연과 남은 시간</span>
-	<img src="images/v2_bg_timer17.png" />
+	<img src="images/cat.jpg" />
 </div>

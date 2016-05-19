@@ -3,5 +3,5 @@
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
 
 <div id="signupDiv">
-SIGNUP
+<img src="images/join.png" onclick="window.location='join.do'"/>
 </div>
