@@ -13,4 +13,7 @@
 	<definition name="login" template="/WEB-INF/layouts/login_layout.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/index.jsp" />
 	</definition>
+	<definition name="join" template="/WEB-INF/layouts/join.jsp">
+		<put-attribute name="body" value="/WEB-INF/web_html/join.jsp" />
+	</definition>
 </tiles-definitions>

@@ -16,9 +16,11 @@ public class indexController {
 	protected final static Logger log = Logger.getLogger(indexController.class);
 	
 	@RequestMapping("/index.do")
+	
 	public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{
 		
 		HttpSession session = request.getSession();
+		
 		Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
 		if(memInfo != null){
 			String id = memInfo.get("id");
