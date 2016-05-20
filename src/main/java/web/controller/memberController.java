@@ -1,4 +1,3 @@
-/*
 package web.controller;
 
 import java.util.HashMap;
@@ -59,4 +58,3 @@ public class memberController {
 		return "redirect:./index.do";
 	}
 }
-*/

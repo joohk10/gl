@@ -7,6 +7,7 @@ public class memberVO {
 	private String pw = "";
 	private String name = "";
 	private String birth = "";
+	private String num = "";
 	private String mlevel = "";
 	
 	public String getSeq() {
@@ -38,6 +39,12 @@ public class memberVO {
 	}
 	public void setBirth(String birth) {
 		this.birth = birth;
+	}
+	public String getnum()	{
+		return num;
+	}
+	public void setnum(String num){
+		this.num = num;
 	}
 	public String getMlevel() {
 		return mlevel;

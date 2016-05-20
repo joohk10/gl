@@ -43,6 +43,7 @@
 	      <mvc:exclude-mapping path="/join.do"/>
 	      <mvc:exclude-mapping path="/index.do"/>
 	      <mvc:exclude-mapping path="/loginAct.do"/>
+	      <mvc:exclude-mapping path="/register.do"/>
 	      <bean class="web.interceptor.sessionInterceptor"/>
 	    </mvc:interceptor>
 	</mvc:interceptors>

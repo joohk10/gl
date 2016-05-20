@@ -10,7 +10,7 @@
 		<result property="id" column="ID" />
 		<result property="pw" column="PW" />
 		<result property="name" column="NAME" />
-		<result property="birth" column="BIRTH" />
+		<!--<result property="birth" column="BIRTH" />-->
 		<result property="mlevel" column="MLEVEL" />
 	</resultMap>
 	
@@ -19,5 +19,10 @@
 		select * from member
 		where id = #id# and pw = #pw#
 	]]>
-	</select>
+	</select> 
+	<insert id="memberDAO.insertUser" parameterClass="memberVO">
+	<![CDATA[
+		insert into MEMBER(ID, PW, NAME, NUM) values (#id#, #pw#, #name#, #num#)
+	]]>
+	</insert>
 </sqlMap>

@@ -13,7 +13,8 @@
 	</div>
 </div>
 
-<div id="footer">
+<div id="footer"><b>
 (주)CAT's-Eye 경기도 부천시천 원미구 지봉로 43<br>
 대표자명: 조현규,김승목,심재훈,김지찬 이메일: CATEye@naver.co.kr
+</b>
 </div>

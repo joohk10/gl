@@ -18,4 +18,8 @@ public class memberDAO {
 	public List<memberVO> selectUser(memberVO _memberVO) throws Exception {
 		return sqlMapClientTemplate.queryForList("memberDAO.selectUser", _memberVO);
 	}
+	public void insertUser(memberVO _memberVO) throws Exception {
+		System.out.println("log");
+		sqlMapClientTemplate.insert("memberDAO.insertUser", _memberVO);
+	}
 }

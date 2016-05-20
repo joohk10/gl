@@ -1,0 +1,57 @@
+#wrap { 
+	text-align: center; 
+	width: 600px; 
+	margin: 50px auto 0px; 
+}
+#joinDiv { 
+	background-image: url('../images/bg_main.png'); 
+	background-repeat: no-repeat;
+	height: 700px;
+	position: relative; 
+	text-align: left;
+	padding: 30px 0px 0px 30px;
+}
+#joinDiv #input_file { 
+	height: 600px;
+	position: absolute; 
+	text-align: left;
+}
+input[type=text], input[type=password],  select {
+width: 30%;
+height: 20px;
+/*입력 칸 (input field) 의 폭을 지정하기 위해, 폭 속성 (width property) 를 사용하였습니다.*/
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+textarea
+{
+	width: 50%;
+/*입력 칸 (input field) 의 폭을 지정하기 위해, 폭 속성 (width property) 를 사용하였습니다.*/
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+input[type=submit] {
+width: 50%;
+background-color: orange;
+color: white;
+padding: 14px 20px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+/*
+#joinDiv {
+	top: 100px;
+	left: 500px;
+	position: absolute;
+	}
+	*/
