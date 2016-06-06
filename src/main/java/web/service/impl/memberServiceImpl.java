@@ -22,6 +22,9 @@ public class memberServiceImpl implements memberService {
 	public List<memberVO> getUser(memberVO _memberVO) throws Exception {
 		return memberDAO.selectUser(_memberVO);
 	}
+	public List<memberVO> getUserInfoBySeq(memberVO _memberVO) throws Exception {
+		return memberDAO.selectUserInfoBySeq(_memberVO);
+	}
 	public void insertUser(memberVO _memberVO) throws Exception {
 		memberDAO.insertUser(_memberVO);
 	}

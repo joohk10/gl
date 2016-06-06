@@ -42,6 +42,7 @@ public class memberController {
 			memberVO memInfo = list.get(0);
 			if(memInfo.getId().equals(id) && memInfo.getPw().equals(pw)){
 				Map<String, String> map = new HashMap<String, String>();
+				map.put("seq", memInfo.getSeq());
 				map.put("id", memInfo.getId());
 				map.put("name", memInfo.getName());
 				map.put("level", memInfo.getMlevel());

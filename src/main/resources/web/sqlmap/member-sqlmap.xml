@@ -19,6 +19,12 @@
 		select * from member
 		where id = #id# and pw = #pw#
 	]]>
+	</select>
+	<select id="memberDAO.selectUserInfoBySeq" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from member
+		where seq = #seq#
+	]]>
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">
 	<![CDATA[

@@ -39,6 +39,11 @@
 			<id>mesir-repo</id>
 			<url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
 		</repository>
+		
+		<repository>
+		  <id>public</id>
+		  <url>http://maven.nuxeo.org/nexus/content/repositories/public/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -310,7 +315,11 @@
    			<artifactId>ojdbc14</artifactId>
    			<version>10.2.0.4.0</version>
    		</dependency>
-		
+		<dependency>
+		   <groupId>atg.taglib.json</groupId>
+		   <artifactId>json-taglib</artifactId>
+		   <version>0.4.1</version>
+		</dependency>
 		</dependencies>
 		
 		<build>

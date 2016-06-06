@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="chatDAO">
+	<typeAlias alias="memberVO" type="web.service.memberVO" />
+	<typeAlias alias="chatRoomVO" type="web.service.chatRoomVO" />
+	
+	<resultMap id="chatRoomList" class="web.service.chatRoomVO">
+		<result property="chatRoomSeq" column="chatRoomSeq" />
+		<result property="chatMemSeq" column="chatMemSeq" />
+		<result property="memSeq" column="memSeq" />
+		<result property="cDate" column="cDate" />
+		<result property="memId" column="memId" />
+		<result property="memName" column="memName" />
+	</resultMap>
+	
+	<select id="chatDAO.selectChatList" parameterClass="chatRoomVO" resultMap="chatRoomList">
+	<![CDATA[
+		select 
+			A.chatMemSeq,
+			A.chatRoomSeq,
+			A.memSeq,
+			B.cDate,
+			C.id as memId,
+			C.name as memName
+		from 
+			chatMemberList A,
+			chatRoom B,
+			member C
+		where
+			A.chatRoomSeq = B.chatRoomSeq AND
+			A.memSeq = C.seq AND
+			A.chatRoomSeq in (select chatRoomSeq
+				from
+					chatMemberList
+				where
+					memSeq = (select seq from member where id = #memId#)
+			)
+	]]>
+	</select>
+	
+	<select id="chatDAO.selectChatList" parameterClass="chatRoomVO" resultClass="Integer">
+	<![CDATA[
+		select count(*) 
+		from 
+			chatMemberList
+		group by chatRoomSeq
+		having 
+			memSeq = #hostSeq# OR
+			memSeq = #guestSeq#
+	]]>
+	</select>
+	
+	<insert id="chatDAO.insertRoom" parameterClass="chatRoomVO">
+	<![CDATA[
+		insert into chatRoom (chatRoomSeq, cDate) values (#chatRoomSeq#, #cDate#)
+	]]>
+	</insert>
+	
+	<insert id="chatDAO.insertRoomMember" parameterClass="chatRoomVO">
+	<![CDATA[
+		insert into chatMemberList (chatMemSeq, chatRoomSeq, memSeq)
+		values (#chatMemSeq#, #chatRoomSeq#, #memSeq#)
+	]]>
+	</insert>
+</sqlMap>

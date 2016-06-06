@@ -16,4 +16,13 @@
 	<definition name="join" template="/WEB-INF/layouts/join.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/join.jsp" />
 	</definition>
+	
+	<!-- chat -->
+	<definition name="chatRoomList" template="/WEB-INF/layouts/login_layout.jsp">
+		<put-attribute name="body" value="/WEB-INF/web_html/chatRoomList.jsp" />
+	</definition>
+	
+	<!-- json msg -->
+	<definition name="jsonMsg" template="/WEB-INF/layouts/json_msg_layout.jsp">
+	</definition>
 </tiles-definitions>
