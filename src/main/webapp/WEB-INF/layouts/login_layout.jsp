@@ -10,7 +10,7 @@
 <title>TITLE</title>
 </head>
 <body>
-<center>
+<div id="wrap">
 <img src=images/index.jpg usemap="#main">
 	<map name="main">
 		<area shape="rect" coords="145,123,200,145" href="./chatRoomList.do"/>
@@ -20,7 +20,7 @@
 		<area shape="rect" coords="103,233,154,283" href="d"/>
 		<area shape="rect" coords="170,267,200,278" href="e"/>
 	</map>
-</center>
+	
 	<tiles:insertAttribute name="body"/>
 </div>
 
