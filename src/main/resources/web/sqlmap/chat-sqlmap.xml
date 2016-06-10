@@ -40,7 +40,7 @@
 	]]>
 	</select>
 	
-	<select id="chatDAO.selectChatList" parameterClass="chatRoomVO" resultClass="Integer">
+	<select id="chatDAO.chkChatList" parameterClass="chatRoomVO" resultClass="Integer">
 	<![CDATA[
 		select count(*) 
 		from 
