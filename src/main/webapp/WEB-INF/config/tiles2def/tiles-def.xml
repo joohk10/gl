@@ -16,7 +16,9 @@
 	<definition name="join" template="/WEB-INF/layouts/join.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/join.jsp" />
 	</definition>
-	
+	<definition name="list" template="/WEB-INF/layouts/list.jsp">
+		<put-attribute name="body" value="/WEB-INF/web_html/list.jsp" />
+	</definition>
 	<!-- chat -->
 	<definition name="chatRoomList" template="/WEB-INF/layouts/login_layout.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/chatRoomList.jsp" />

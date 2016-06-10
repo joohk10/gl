@@ -40,6 +40,7 @@
 	<mvc:interceptors>
 	    <mvc:interceptor>
 	      <mvc:mapping path="/**"/>
+	      <mvc:exclude-mapping path="/listAct.do"/>
 	      <mvc:exclude-mapping path="/join.do"/>
 	      <mvc:exclude-mapping path="/index.do"/>
 	      <mvc:exclude-mapping path="/loginAct.do"/>
