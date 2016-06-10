@@ -15,6 +15,10 @@
 		<result property="memName" column="memName" />
 	</resultMap>
 	
+	<resultMap id="chkCnt" class="web.service.chatRoomVO">
+		<result property="cnt" column="cnt" />
+	</resultMap>
+	
 	<select id="chatDAO.selectChatList" parameterClass="chatRoomVO" resultMap="chatRoomList">
 	<![CDATA[
 		select 
@@ -36,19 +40,20 @@
 					chatMemberList
 				where
 					memSeq = (select seq from member where id = #memId#)
-			)
+			) AND
+			C.id != #memId#
 	]]>
 	</select>
 	
-	<select id="chatDAO.chkChatList" parameterClass="chatRoomVO" resultClass="Integer">
+	<select id="chatDAO.chkChatList" parameterClass="chatRoomVO" resultMap="chkCnt">
 	<![CDATA[
-		select count(*) 
+		select count(*) as cnt 
 		from 
-			chatMemberList
-		group by chatRoomSeq
-		having 
+			chatMemberList 
+		where 
 			memSeq = #hostSeq# OR
 			memSeq = #guestSeq#
+		group by chatRoomSeq 
 	]]>
 	</select>
 	

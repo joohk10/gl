@@ -17,8 +17,8 @@ public class chatDAO {
 	public List<chatRoomVO> selectRoomList(chatRoomVO _chatRoomVO) throws Exception {
 		return sqlMapClientTemplate.queryForList("chatDAO.selectChatList", _chatRoomVO);
 	}
-	public int chkRoomList(chatRoomVO _chatRoomVO) throws Exception {
-		return (Integer) sqlMapClientTemplate.queryForObject("chatDAO.chkChatList", _chatRoomVO);
+	public List<chatRoomVO> chkRoomList(chatRoomVO _chatRoomVO) throws Exception {
+		return sqlMapClientTemplate.queryForList("chatDAO.chkChatList", _chatRoomVO);
 	}
 	public void insertRoom(chatRoomVO _chatRoomVO) throws Exception {
 		sqlMapClientTemplate.insert("chatDAO.insertRoom", _chatRoomVO);

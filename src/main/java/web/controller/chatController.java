@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import web.service.chatRoomVO;
@@ -32,6 +33,7 @@ public class chatController {
 	
 	@Autowired
 	protected chatService chatService;
+	@Autowired
 	protected memberService memberService;
 	
 	// 해쉬 생성
@@ -112,10 +114,13 @@ public class chatController {
 		chatRoomVO _chatRoomVO = new chatRoomVO();
 		_chatRoomVO.setHostSeq(memInfo.get("seq"));
 		_chatRoomVO.setGuestSeq(inviteSeq);
-		if(chatService.chkRoomState(_chatRoomVO) > 0){
-			model.addAttribute("code", "error");
-			model.addAttribute("msg", "이미 생성되었습니다.");
-			return "jsonMsg"; // error
+		List<chatRoomVO> chkRoom = chatService.chkRoomState(_chatRoomVO);
+		if(chkRoom.size() != 0){
+			if(Integer.parseInt(chkRoom.get(0).getCnt()) > 1){
+				model.addAttribute("code", "error");
+				model.addAttribute("msg", "이미 생성되었습니다.");
+				return "jsonMsg"; // error
+			}
 		}
 		
 		// 생성
@@ -133,7 +138,7 @@ public class chatController {
 		chatService.insertRoomMember(_chatRoomVO);
 		
 		_chatRoomVO.setChatRoomSeq(roomSeq);
-		_chatRoomVO.setChatMemSeq(hostSeq);
+		_chatRoomVO.setChatMemSeq(guestSeq);
 		_chatRoomVO.setMemSeq(inviteSeq);
 		chatService.insertRoomMember(_chatRoomVO);
 

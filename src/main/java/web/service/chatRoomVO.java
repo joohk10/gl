@@ -10,6 +10,7 @@ public class chatRoomVO {
 	private String memId = "";
 	private String hostSeq = "";
 	private String guestSeq = "";
+	private String cnt = "";
 	
 	public String getChatRoomSeq() {
 		return chatRoomSeq;
@@ -58,5 +59,11 @@ public class chatRoomVO {
 	}
 	public void setGuestSeq(String guestSeq) {
 		this.guestSeq = guestSeq;
+	}
+	public String getCnt() {
+		return cnt;
+	}
+	public void setCnt(String cnt) {
+		this.cnt = cnt;
 	}
 }

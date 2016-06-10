@@ -21,7 +21,7 @@ public class chatServiceImpl implements chatService {
 		return chatDAO.selectRoomList(_chatRoomVO);
 	}
 
-	public int chkRoomState(chatRoomVO _chatRoomVO) throws Exception {
+	public List<chatRoomVO> chkRoomState(chatRoomVO _chatRoomVO) throws Exception {
 		return chatDAO.chkRoomList(_chatRoomVO);
 	}
 

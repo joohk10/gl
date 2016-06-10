@@ -2,13 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
 <div>
-<form method="POST" action="regChatRoom.do">
+<!-- form method="POST" action="regChatRoom.do">
 <input type="text" name="inviteSeq">
 <input type="submit">
-</form>
+</form -->
 <c:choose>
 	<c:when test="${fn:length(chatRoomList) > 0}">
-	aaaaa
+		<c:forEach var="item" items="${chatRoomList}">
+		${item.memId }
+		${item.memName }
+		</c:forEach>
 	</c:when>
 	<c:otherwise>
 	생성된 채팅방이 없습니다.
