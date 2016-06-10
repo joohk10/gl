@@ -8,10 +8,14 @@
 </form -->
 <c:choose>
 	<c:when test="${fn:length(chatRoomList) > 0}">
+	<ul class="pList">
 		<c:forEach var="item" items="${chatRoomList}">
-		${item.memId }
-		${item.memName }
+		<li>
+			<span class="w">${item.memName } 님과의 대화</span>
+			<span class="b"><a href="chatRoom.do?seq=${item.chatRoomSeq }">입장</a></span>
+		</li>
 		</c:forEach>
+	</ul>
 	</c:when>
 	<c:otherwise>
 	생성된 채팅방이 없습니다.

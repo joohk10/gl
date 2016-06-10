@@ -31,7 +31,7 @@ public class memberController {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		if("".equals(id) || "".equals(pw)){
+		if("".equals(id) || id == null || "".equals(pw) || pw == null){
 			return "redirect:./index.do?msg=emptyParam";
 		}
 		

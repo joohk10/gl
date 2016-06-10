@@ -5,6 +5,7 @@
 <sqlMap namespace="chatDAO">
 	<typeAlias alias="memberVO" type="web.service.memberVO" />
 	<typeAlias alias="chatRoomVO" type="web.service.chatRoomVO" />
+	<typeAlias alias="chatLogVO" type="web.service.chatLogVO" />
 	
 	<resultMap id="chatRoomList" class="web.service.chatRoomVO">
 		<result property="chatRoomSeq" column="chatRoomSeq" />
@@ -12,6 +13,13 @@
 		<result property="memSeq" column="memSeq" />
 		<result property="cDate" column="cDate" />
 		<result property="memId" column="memId" />
+		<result property="memName" column="memName" />
+	</resultMap>
+	
+	<resultMap id="chatLogList" class="web.service.chatLogVO">
+		<result property="chatLogSeq" column="chatLogSeq" />
+		<result property="chatMsg" column="chatMsg" />
+		<result property="chatTime" column="chatTime" />
 		<result property="memName" column="memName" />
 	</resultMap>
 	
@@ -57,6 +65,36 @@
 	]]>
 	</select>
 	
+	<select id="chatDAO.chkRoomMember" parameterClass="chatRoomVO" resultMap="chkCnt">
+	<![CDATA[
+		select count(*) as cnt 
+		from 
+			chatMemberList A,
+			member B
+		where 
+			A.memSeq = B.seq AND
+			A.chatRoomSeq = #chatRoomSeq# AND
+			B.id = #memId# 
+	]]>
+	</select>
+	
+	<select id="chatDAO.getChatList" parameterClass="chatLogVO" resultMap="chatLogList">
+	<![CDATA[
+		select 
+			B.name as memName, 
+			A.chatLogSeq, 
+			A.chatMsg, 
+			A.chatLogTime as chatTime 
+		from 
+			chatLog A, 
+			member B 
+		where 
+			A.chatMemSeq = B.seq AND 
+			A.chatRoomSeq = #chatRoomSeq# 
+		order by chatLogTime asc
+	]]>
+	</select>
+	
 	<insert id="chatDAO.insertRoom" parameterClass="chatRoomVO">
 	<![CDATA[
 		insert into chatRoom (chatRoomSeq, cDate) values (#chatRoomSeq#, #cDate#)
@@ -67,6 +105,13 @@
 	<![CDATA[
 		insert into chatMemberList (chatMemSeq, chatRoomSeq, memSeq)
 		values (#chatMemSeq#, #chatRoomSeq#, #memSeq#)
+	]]>
+	</insert>
+	
+	<insert id="chatDAO.insertMsgLog" parameterClass="chatLogVO">
+	<![CDATA[
+		insert into chatLog (chatLogSeq, chatRoomSeq, chatMemSeq, chatMsg, chatLogTime)
+		values (#chatLogSeq#, #chatRoomSeq#, #chatMemSeq#, #chatMsg#, SYSTIMESTAMP)
 	]]>
 	</insert>
 </sqlMap>

@@ -7,6 +7,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/list.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
+<c:if test="${fn:length(customCss) > 0}">
+	<c:forEach var="item" items="${customCss}">
+<link rel="stylesheet" type="text/css" href="${item }" />
+	</c:forEach>
+</c:if>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<c:if test="${fn:length(customJs) > 0}">
+	<c:forEach var="item" items="${customJs}">
+<script type="text/javascript" src="${item }"></script>
+	</c:forEach>
+</c:if>
 <title>TITLE</title>
 </head>
 <body>

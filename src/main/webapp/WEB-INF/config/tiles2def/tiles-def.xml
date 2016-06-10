@@ -19,12 +19,18 @@
 	<definition name="list" template="/WEB-INF/layouts/list.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/list.jsp" />
 	</definition>
+	
 	<!-- chat -->
 	<definition name="chatRoomList" template="/WEB-INF/layouts/login_layout.jsp">
 		<put-attribute name="body" value="/WEB-INF/web_html/chatRoomList.jsp" />
 	</definition>
+	<definition name="chatRoom" template="/WEB-INF/layouts/login_layout.jsp">
+		<put-attribute name="body" value="/WEB-INF/web_html/chatRoom.jsp" />
+	</definition>
 	
 	<!-- json msg -->
 	<definition name="jsonMsg" template="/WEB-INF/layouts/json_msg_layout.jsp">
+	</definition>	
+	<definition name="jsonChatMsg" template="/WEB-INF/layouts/json_chat_msg_layout.jsp">
 	</definition>
 </tiles-definitions>

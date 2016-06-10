@@ -1,0 +1,63 @@
+.pList {
+	position: relative;
+	width: 450px;
+	margin: 0 auto;
+}
+
+.pList li {
+	list-style-type: none;
+}
+
+.pList span.w {
+	display: inline-block;
+	width: 78%;
+	text-align: left;
+}
+
+.pList span.b {
+	display: inline-block;
+	width: 20%;
+}
+
+#chatWrap {
+	background-color: #9bbad8;
+	width: 450px;
+	margin: 0 auto;
+	min-height: 600px;
+	position: relative;
+}
+
+#chatBox {
+	position: absolute;
+	bottom: 0px;
+	padding: 20px;
+	height: 80px;
+}
+
+#chatInputBox {
+	width: 330px;
+	float: left;
+	height: 100%;
+}
+
+#chatInput {
+	border: 0px;
+	width: 100%;
+	height: 100%;
+	resize: none;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#chatSendBtn {
+	width: 80px;
+	float: right;
+	height: 100%;
+	background-color: #ffec42;
+}
+
+#chatSendBtn span {
+	display: block;
+	height: 100%;
+	line-height: 80px;
+}
