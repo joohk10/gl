@@ -29,7 +29,9 @@ $(document).ready(function(){
 				$.addChatMsg(val.chatMsg, val.chatMemSeq);
 				_lastTime = val.chatTime;
 			});
-			$("#chatLog").scrollTop(99999);
+			if(chatLog.msgCnt > 0){
+				$("#chatLog").scrollTop(99999)
+			}
 		});
 	};
 	
