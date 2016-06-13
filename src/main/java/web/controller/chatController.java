@@ -104,6 +104,7 @@ public class chatController {
 		}
 		
 		model.addAttribute("roomSeq", roomSeq);
+		model.addAttribute("mySeq", memInfo.get("seq"));
 		
 		// css 설정
 		String customCss[] = { "css/chat.css" };
@@ -221,7 +222,7 @@ public class chatController {
 		HttpSession session = request.getSession();
 		Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
 		String roomSeq = request.getParameter("roomSeq");
-		String lastMsg = request.getParameter("lastMsg");
+		String lastTime = request.getParameter("lastTime");
 		
 		if("".equals(roomSeq) || roomSeq == null){
 			model.addAttribute("code", "error");
@@ -243,13 +244,16 @@ public class chatController {
 
 		chatLogVO _chatLogVO = new chatLogVO();
 		List<chatLogVO> _chatLogList = null;
-		if("".equals(lastMsg) || lastMsg == null){
+		if("".equals(lastTime) || lastTime == null){
 			// 마지막 100개 불러옴
 			_chatLogVO.setChatRoomSeq(roomSeq);
 			_chatLogList = chatService.getChatList(_chatLogVO);
 			model.addAttribute("type", "firstLoad");
 		}else{
-			// lastMsg 이후 내용 가져옴
+			// lastTime 이후 내용 가져옴
+			_chatLogVO.setChatRoomSeq(roomSeq);
+			_chatLogVO.setChatTime(lastTime);
+			_chatLogList = chatService.getChatListUTime(_chatLogVO);
 			model.addAttribute("type", "getLastMsg");
 		}
 		

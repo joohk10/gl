@@ -10,6 +10,7 @@
 			<json:property name="chatLogSeq" value="${item.chatLogSeq }"/>
 			<json:property name="chatMsg" value="${item.chatMsg }"/>
 			<json:property name="chatTime" value="${item.chatTime }"/>
+			<json:property name="chatMemSeq" value="${item.chatMemSeq }" />
 		</json:object>
 	</json:array>
 </json:object>

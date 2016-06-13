@@ -34,6 +34,10 @@ public class chatServiceImpl implements chatService {
 		return chatDAO.getChatList(_chatLogVO);
 	}
 
+	public List<chatLogVO> getChatListUTime(chatLogVO _chatLogVO) throws Exception {
+		return chatDAO.getChatListUTime(_chatLogVO);
+	}
+
 	public void insertRoom(chatRoomVO _chatRoomVO) throws Exception {
 		chatDAO.insertRoom(_chatRoomVO);
 	}

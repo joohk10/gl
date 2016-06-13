@@ -21,6 +21,7 @@
 		<result property="chatMsg" column="chatMsg" />
 		<result property="chatTime" column="chatTime" />
 		<result property="memName" column="memName" />
+		<result property="chatMemSeq" column="chatMemSeq" />
 	</resultMap>
 	
 	<resultMap id="chkCnt" class="web.service.chatRoomVO">
@@ -82,6 +83,7 @@
 	<![CDATA[
 		select 
 			B.name as memName, 
+			B.seq as chatMemSeq, 
 			A.chatLogSeq, 
 			A.chatMsg, 
 			A.chatLogTime as chatTime 
@@ -91,6 +93,25 @@
 		where 
 			A.chatMemSeq = B.seq AND 
 			A.chatRoomSeq = #chatRoomSeq# 
+		order by chatLogTime asc
+	]]>
+	</select>
+	
+	<select id="chatDAO.getChatListUTime" parameterClass="chatLogVO" resultMap="chatLogList">
+	<![CDATA[
+		select 
+			B.name as memName, 
+			B.seq as chatMemSeq, 
+			A.chatLogSeq, 
+			A.chatMsg, 
+			A.chatLogTime as chatTime 
+		from 
+			chatLog A, 
+			member B 
+		where 
+			A.chatMemSeq = B.seq AND 
+			A.chatRoomSeq = #chatRoomSeq# AND 
+			A.chatLogTime > #chatTime# 
 		order by chatLogTime asc
 	]]>
 	</select>

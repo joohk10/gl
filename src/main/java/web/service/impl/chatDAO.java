@@ -27,6 +27,9 @@ public class chatDAO {
 	public List<chatLogVO> getChatList(chatLogVO _chatLogVO) throws Exception {
 		return sqlMapClientTemplate.queryForList("chatDAO.getChatList", _chatLogVO);
 	}
+	public List<chatLogVO> getChatListUTime(chatLogVO _chatLogVO) throws Exception {
+		return sqlMapClientTemplate.queryForList("chatDAO.getChatListUTime", _chatLogVO);
+	}
 	public void insertRoom(chatRoomVO _chatRoomVO) throws Exception {
 		sqlMapClientTemplate.insert("chatDAO.insertRoom", _chatRoomVO);
 	}
