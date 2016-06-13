@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
-<div>
+<div id="chatWrapDiv">
 	<input type="hidden" name="roomSeq" id="roomSeq" value="${roomSeq }" />
 	<input type="hidden" name="mySeq" id="mySeq" value="${mySeq }" />
 	<h1>채팅방</h1>

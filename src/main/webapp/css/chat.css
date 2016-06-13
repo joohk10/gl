@@ -78,10 +78,15 @@
 	text-align: left;
 }
 
-.fMsg span.chatMsg {
+.fMsg .chatMsg {
 	padding: 5px;
 	background-color: #ffffff;
 	border-radius: 10px;
+	white-space: pre-line;
+	overflow: hidden;
+	max-width: 100%;
+	display: inline-block;
+	word-break: break-all;
 }
 
 .mMsg {
@@ -89,8 +94,13 @@
 	text-align: right;
 }
 
-.mMsg span.chatMsg {
+.mMsg .chatMsg {
 	padding: 5px;
 	background-color: #ffec42;
 	border-radius: 10px;
+	white-space: pre-line;
+	overflow: hidden;
+	max-width: 100%;
+	display: inline-block;
+	word-break: break-all;
 }

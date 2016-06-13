@@ -9,10 +9,19 @@ li {
 
 #wrap {
 	text-align: center;
+	min-width: 1500px;
 }
 
 #wrap > div {
 	position: absolute;
 	top: 120px;
 	width: 100%;
+	min-width: 1500px;
+}
+
+#wrap > div#chatWrapDiv {
+	left: 50%;
+	margin-left: -250px;
+	width: auto;
+	min-width: initial;
 }
