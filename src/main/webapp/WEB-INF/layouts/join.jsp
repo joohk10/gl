@@ -95,9 +95,12 @@ $(document).ready(function(){
 <body>
 <div id="wrap">
 <div id="joinDiv">
-	<form name="form" method="POST" action="" id="joinform">
+	<form name="form" method="POST" action="" id="joinform" enctype="multipart/form-data">
 	<img src="images/profile.jpg" id="img_preview" style="width:20%;">
 	<input type="file" value="프로필 사진" name="filen" id="input_file"/><br>
+	<b>성별</b>
+	<input type="radio" name="sex" value=0 checked>남자
+	<input type="radio" name="sex" value=1>여자<br><br>
 	<b>이름<br>
 	<input type="text" name="name" id="uName" /><br>
 	학번<br>
@@ -105,9 +108,9 @@ $(document).ready(function(){
 	아이디<br>
 	<input type="text" name="id" id="uId" /><br>
 	비밀번호<br>
-	<input type="password" name="pw" id="uPw" /><br><br>
+	<input type="password" name="pw" id="uPw" /><br>
 	자기소개</b><br>
-	<textarea rows="5" cols="30" name="contents" name="introd" id="introd">자기소개를 입력해주세요.</textarea><br><br><br>
+	<textarea rows="5" cols="30" name="contents" name="introd" id="introd">자기소개를 입력해주세요.</textarea><br><br>
 	<input type="submit" value="가입" id="joinSubmit" onclick="insertAct()"/>
 	</form>
 </div>

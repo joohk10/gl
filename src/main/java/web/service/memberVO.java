@@ -9,6 +9,7 @@ public class memberVO {
 	private String birth = "";
 	private String num = "";
 	private String mlevel = "";
+	private String sex = "";
 	
 	public String getSeq() {
 		return seq;
@@ -52,5 +53,10 @@ public class memberVO {
 	public void setMlevel(String mlevel) {
 		this.mlevel = mlevel;
 	}
-
+	public String getsex() {
+		return sex;
+	}
+	public void setsex(String sex) {
+		this.sex = sex;
+	}
 }

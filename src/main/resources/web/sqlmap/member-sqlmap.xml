@@ -28,7 +28,7 @@
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">
 	<![CDATA[
-		insert into MEMBER(ID, PW, NAME, NUM) values (#id#, #pw#, #name#, #num#)
+		insert into MEMBER(ID, PW, NAME, NUM, SEX) values (#id#, #pw#, #name#, #num#, #sex#)
 	]]>
 	</insert>
 </sqlMap>
