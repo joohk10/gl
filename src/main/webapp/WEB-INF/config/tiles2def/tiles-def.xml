@@ -28,6 +28,11 @@
 		<put-attribute name="body" value="/WEB-INF/web_html/chatRoom.jsp" />
 	</definition>
 	
+	<!-- world cup -->
+	<definition name="worldCup" template="/WEB-INF/layouts/login_layout.jsp">
+		<put-attribute name="body" value="/WEB-INF/web_html/worldCup.jsp" />
+	</definition>
+	
 	<!-- json msg -->
 	<definition name="jsonMsg" template="/WEB-INF/layouts/json_msg_layout.jsp">
 	</definition>	

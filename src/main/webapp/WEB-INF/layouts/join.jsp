@@ -96,8 +96,10 @@ $(document).ready(function(){
 <div id="wrap">
 <div id="joinDiv">
 	<form name="form" method="POST" action="" id="joinform" enctype="multipart/form-data">
-	<img src="images/profile.jpg" id="img_preview" style="width:20%;">
-	<input type="file" value="프로필 사진" name="filen" id="input_file"/><br>
+	<div id="profilePreview">
+		<img src="images/profile.jpg" id="img_preview">
+		<input type="file" value="프로필 사진" name="filen" id="input_file"/>
+	</div>
 	<b>성별</b>
 	<input type="radio" name="sex" value=0 checked>남자
 	<input type="radio" name="sex" value=1>여자<br><br>
