@@ -1,5 +1,7 @@
 package web.service;
 
-public interface worldCupService {
+import java.util.List;
 
+public interface worldCupService {
+	public List<memberVO> getWorldCupMember(worldCupVO _worldCupVO) throws Exception;
 }

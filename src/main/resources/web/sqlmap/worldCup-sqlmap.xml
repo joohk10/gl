@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+"http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="chatDAO">
+	<typeAlias alias="memberVO" type="web.service.memberVO" />
+	<typeAlias alias="worldCupVO" type="web.service.worldCupVO" />
+	
+	<resultMap id="memberList" class="web.service.memberVO">
+		<result property="seq" column="seq" />
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="num" column="num" />
+		<result property="sex" column="sex" />
+		<result property="hobby" column="hobby" />
+		<result property="intro" column="intro" />
+		<result property="area" column="area" />
+		<result property="filen" column="filen" />
+	</resultMap>
+	
+	<select id="worldCupDAO.selectWorldCupMember" parameterClass="worldCupVO" resultMap="memberList">
+	<![CDATA[
+		select *
+		from ( 
+			select 
+				seq,
+				id,
+				name,
+				num,
+				sex,
+				hobby,
+				intro,
+				area,
+				filen
+			from
+				member
+			where
+				seq not in ( 
+					select seq 
+					from worldCupLog
+					where hostMemSeq = #hostMemSeq#
+				) AND
+				seq != #hostMemSeq#
+			order by DBMS_RANDOM.RANDOM
+		)
+		where rownum < 9
+	]]>
+	</select>
+</sqlMap>

@@ -12,7 +12,6 @@ public class sessionInterceptor extends HandlerInterceptorAdapter {
 		public boolean preHandle(HttpServletRequest request, 
 				HttpServletResponse response, Object handler) throws Exception {
 			
-			// System.out.println("call session");
 			HttpSession session = request.getSession();
 			Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
 			if(memInfo == null){
@@ -20,8 +19,6 @@ public class sessionInterceptor extends HandlerInterceptorAdapter {
 				return false;
 			}
 			String id = memInfo.get("id");
-			// String name = memInfo.get("name");
-			// String level = memInfo.get("level");
 			
 			if("".equals(id) || id == null){
 				response.sendRedirect("./index.do");

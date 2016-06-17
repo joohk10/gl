@@ -10,6 +10,10 @@ public class memberVO {
 	private String num = "";
 	private String mlevel = "";
 	private String sex = "";
+	private String hobby = "";
+	private String intro = "";
+	private String area = "";
+	private String filen = "";
 	
 	public String getSeq() {
 		return seq;
@@ -58,5 +62,29 @@ public class memberVO {
 	}
 	public void setsex(String sex) {
 		this.sex = sex;
+	}
+	public String getHobby() {
+		return hobby;
+	}
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+	public String getIntro() {
+		return intro;
+	}
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public String getFilen() {
+		return filen;
+	}
+	public void setFilen(String filen) {
+		this.filen = filen;
 	}
 }

@@ -3,4 +3,5 @@
 <sqlMapConfig>
 	<sqlMap resource="web/sqlmap/member-sqlmap.xml" />
 	<sqlMap resource="web/sqlmap/chat-sqlmap.xml" />
+	<sqlMap resource="web/sqlmap/worldCup-sqlmap.xml" />
 </sqlMapConfig>
