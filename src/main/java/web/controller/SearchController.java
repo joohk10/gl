@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SearchController {
 	
-	protected final static Logger log = Logger.getLogger(SearchController.class);
+	protected final static Logger log = Logger.getLogger(joinController.class);
 	
-	@RequestMapping("/Search.do")
+	@RequestMapping("/search.do")
 	
-	public String SeachPage(HttpServletRequest request, ModelMap model) throws Exception{
+public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{
+		
 		HttpSession session = request.getSession();
 		
 		Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
@@ -28,9 +29,7 @@ public class SearchController {
 			model.addAttribute("uId", id);
 			model.addAttribute("uName", name);
 			
-			return "login";
-		}else{
-			return "not_login";
-		}
 	}
+	return "search";
+}
 }

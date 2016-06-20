@@ -21,6 +21,9 @@ public class memberDAO {
 	public List<memberVO> selectUserInfoBySeq(memberVO _memberVO) throws Exception {
 		return sqlMapClientTemplate.queryForList("memberDAO.selectUserInfoBySeq", _memberVO);
 	}
+	public List<memberVO> searchUser(memberVO _memberVO) throws Exception {
+		return sqlMapClientTemplate.queryForList("memberDAO.searchUser", _memberVO);
+	}
 	public void insertUser(memberVO _memberVO) throws Exception {
 		System.out.println("log");
 		sqlMapClientTemplate.insert("memberDAO.insertUser", _memberVO);

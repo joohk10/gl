@@ -11,9 +11,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class listact{
+public class listController{
 	protected final static Logger log = Logger.getLogger(indexController.class);
-	@RequestMapping("/listAct.do")
+	@RequestMapping("/list.do")
 public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{		
 			return "list";
 	}

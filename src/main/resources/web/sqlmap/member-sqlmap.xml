@@ -20,6 +20,12 @@
 		where id = #id# and pw = #pw#
 	]]>
 	</select>
+	<select id="memberDAO.searchUser" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from member
+		where #sel# = #search#
+	]]>
+	</select>
 	<select id="memberDAO.selectUserInfoBySeq" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
 		select * from member

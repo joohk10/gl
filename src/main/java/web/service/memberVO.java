@@ -14,6 +14,24 @@ public class memberVO {
 	private String intro = "";
 	private String area = "";
 	private String filen = "";
+	private String sel = "";
+	private String search="";
+	
+	public void setSel(String sel) {
+		this.sel = sel;
+	}
+	
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	
+	public String getSel() {
+		return sel;
+	}
+	
+	public String getsearch() {
+		return search;
+	}
 	
 	public String getSeq() {
 		return seq;
