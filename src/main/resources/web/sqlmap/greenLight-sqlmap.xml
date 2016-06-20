@@ -29,6 +29,15 @@
 	]]>
 	</select>
 	
+	<select id="greenLightDAO.chkDoubleLight" parameterClass="greenLightVO" resultMap="chkGreenLight">
+	<![CDATA[
+		select count(*) as cnt
+		from greenLight
+		where
+			(tow = #fromw#) 
+	]]>
+	</select>
+	
 	<insert id="greenLightDAO.insertGreenLight" parameterClass="greenLightVO">
 	<![CDATA[
 		insert into greenLight (seq, fromw, tow)

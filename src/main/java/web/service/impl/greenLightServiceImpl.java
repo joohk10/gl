@@ -25,6 +25,10 @@ public class greenLightServiceImpl implements greenLightService {
 		return greenLightDAO.chkDoubleLight(_greenLightVO);
 	}
 	
+	public List<greenLightVO> countLight(greenLightVO _greenLightVO) throws Exception {
+		return greenLightDAO.countLight(_greenLightVO);
+	}
+	
 	public void insertGreenLight(greenLightVO _greenLightVO) throws Exception {
 		greenLightDAO.insertGreenLight(_greenLightVO);
 	}

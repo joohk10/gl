@@ -22,14 +22,14 @@ public String mainPage(HttpServletRequest request, ModelMap model) throws Except
 		HttpSession session = request.getSession();
 		
 		Map<String, String> memInfo = (Map<String, String>) session.getAttribute("memInfo");
-		if(memInfo != null){
+		if(memInfo != null)
+		{
 			String id = memInfo.get("id");
 			String name = memInfo.get("name");
 			
 			model.addAttribute("uId", id);
 			model.addAttribute("uName", name);
-			
-	}
+		}
 	return "search";
 }
 }

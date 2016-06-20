@@ -4,17 +4,37 @@
 <div>
 	<c:choose>
 	<c:when test="${fn:length(greenlist) > 0}">
+	<b><h1>
+	사진 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+	 학번 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 상태</h1>
 	<ul class="pList">
 		<c:forEach var="item" items="${greenlist}">
 		<li>
-			<span class="w">${item.memName } 님과의 대화</span>
-			<span class="b"><a href="chatRoom.do?seq=${item.chatRoomSeq }">입장</a></span>
+		<h3>
+			<span class="w">
+			<img src="./${item.filen }" width=100px, height=100px />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+			${item.name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			${item.num} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div style="position: relative; left: 420px; top: -50px;">
+			<table width="60" height="50" background="images/cat2.jpg">
+			<tr>
+			<td style="padding-top:11px; padding-right:25px;">
+			<img src="images/green.jpg">
+			</td>
+			</tr>
+			</table>
+			</div>
+			</span>
+		</h3>
 		</li>
 		</c:forEach>
 	</ul>
+	</b>
 	</c:when>
 	<c:otherwise>
-	생성된 채팅방이 없습니다.
 	</c:otherwise>
 </c:choose>
 	</form>

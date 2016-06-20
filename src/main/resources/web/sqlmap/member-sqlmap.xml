@@ -43,8 +43,9 @@
 	</select>
 	<select id="memberDAO.searchgreen" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
-		select tow from greenlight
-		where fromw = #seq#
+		select * from member where seq in
+		(select tow from greenlight
+		where fromw = #seq#)
 	]]>
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">

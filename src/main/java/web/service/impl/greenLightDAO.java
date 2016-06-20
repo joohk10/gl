@@ -22,6 +22,10 @@ public class greenLightDAO {
 		return sqlMapClientTemplate.queryForList("greenLightDAO.chkDoubleLight", _greenLightVO);
 	}
 
+	public List<greenLightVO> countLight(greenLightVO _greenLightVO) throws Exception {
+		return sqlMapClientTemplate.queryForList("greenLightDAO.countLight", _greenLightVO);
+	}
+	
 	public void insertGreenLight(greenLightVO _greenLightVO) throws Exception {
 		sqlMapClientTemplate.insert("greenLightDAO.insertGreenLight", _greenLightVO);
 	}
