@@ -31,8 +31,10 @@ public class listController{
 		List<memberVO> list = memberService.searchgreen(_memberVO);
 		
 		
-		if(list.size() == 1){
-			memberVO memInfo = list.get(0);
+		for(int i=0;i<10;i++)
+		{
+			int wseq = list.get(i);
+			List<memberVO> list = memberService.searchgreen(_memberVO);
 				Map<String, String> map = new HashMap<String, String>();
 				map.put("seq", memInfo.getSeq());
 				map.put("id", memInfo.getId());
