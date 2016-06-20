@@ -29,7 +29,11 @@ public class commonController {
 	
 	// 날짜 스트링
 	public String getDateStr(){
-		DateFormat sdFormat = new SimpleDateFormat("yyyyMMdd S");
+		return getDateStr("yyyyMMdd S");
+	}
+	
+	public String getDateStr(String format){
+		DateFormat sdFormat = new SimpleDateFormat(format);
 		Date nowDate = new Date();
 		String tempDate = sdFormat.format(nowDate);
 		return tempDate;

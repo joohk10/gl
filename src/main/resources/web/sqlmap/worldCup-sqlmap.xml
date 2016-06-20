@@ -18,6 +18,22 @@
 		<result property="filen" column="filen" />
 	</resultMap>
 	
+	<resultMap id="chkMem" class="web.service.worldCupVO">
+		<result property="cnt" column="cnt" />
+		<result property="chk" column="chk" />
+	</resultMap>
+	
+	<select id="worldCupDAO.chkWorldCup" parameterClass="worldCupVO" resultMap="chkMem">
+	<![CDATA[
+		select count(*) as cnt, chk
+		from worldCupLog
+		where
+			hostMemSeq = #hostMemSeq# AND
+			logDate >= #logDate#
+		group by chk
+	]]>
+	</select>
+	
 	<select id="worldCupDAO.selectWorldCupMember" parameterClass="worldCupVO" resultMap="memberList">
 	<![CDATA[
 		select *
@@ -40,10 +56,51 @@
 					from worldCupLog
 					where hostMemSeq = #hostMemSeq#
 				) AND
-				seq != #hostMemSeq#
+				seq != #hostMemSeq# AND
+				sex != (
+					select sex
+					from member
+					where seq = #hostMemSeq#
+				)
 			order by DBMS_RANDOM.RANDOM
 		)
 		where rownum < 9
 	]]>
 	</select>
+	<select id="worldCupDAO.selectWorldCupOldMember" parameterClass="worldCupVO" resultMap="memberList">
+	<![CDATA[
+		select 
+			seq,
+			id,
+			name,
+			num,
+			sex,
+			hobby,
+			intro,
+			area,
+			filen
+		from
+			member
+		where
+			seq in ( 
+				select memSeq 
+				from worldCupLog
+				where hostMemSeq = #hostMemSeq#
+			)
+	]]>
+	</select>
+	
+	<insert id="worldCupDAO.insertWorldCupLog" parameterClass="worldCupVO">
+	<![CDATA[
+		insert into worldCupLog (worldCupSeq, hostMemSeq, memSeq, logDate)
+		values (#worldCupSeq#, #hostMemSeq#, #memSeq#, SYSTIMESTAMP)
+	]]>
+	</insert>
+	
+	<update id="worldCupDAO.updateWorldCupLog" parameterClass="worldCupVO">
+	<![CDATA[
+		update worldCupLog set chk = 'Y' 
+		where hostMemSeq = #hostMemSeq#
+	]]>
+	</update>
 </sqlMap>

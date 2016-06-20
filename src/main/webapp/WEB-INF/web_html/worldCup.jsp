@@ -3,13 +3,16 @@
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
 <div id="worldCupDiv">
 
+	<div id="worldCupWrapDiv">
+	<h1>8강</h1>
 <c:choose>
 	<c:when test="${fn:length(memberList) == 8}">
 	<ul class="pList">
 		<c:forEach var="item" items="${memberList}">
-		<li>
-			<span class="w">${item.seq }</span>
-			<span class="b">${item.name }</span>
+		<li class="r16s notView" seq="${item.seq}">
+			<span class="hobby">${item.hobby }</span>
+			<span class="intro">${item.intro }</span>
+			<span class="image"><img src="http://img.naver.net/static/www/u/2013/0731/nmms_224940510.gif" /></span>
 		</li>
 		</c:forEach>
 	</ul>
@@ -19,4 +22,6 @@
 	</c:otherwise>
 </c:choose>
 
+	</div>
+	
 </div>

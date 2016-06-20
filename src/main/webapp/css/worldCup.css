@@ -1,0 +1,53 @@
+#wrap > div#worldCupDiv {
+	left: 50%;
+	margin-left: -250px;
+	width: 450px;
+	height: 600px;
+	min-width: initial;
+}
+
+#worldCupWrapDiv {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url('../images/worldCup.png');
+}
+#worldCupWrapDiv ul li.notView {
+	display: none;
+}
+
+#worldCupWrapDiv ul li.worldCupLeftPos {
+	width: 200px;
+	height: 100px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	display: block;
+}
+
+#worldCupWrapDiv ul li.worldCupRightPos {
+	width: 200px;
+	height: 100px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	display: block;
+}
+
+#worldCupWrapDiv ul li.r16s span,
+#worldCupWrapDiv ul li.r8s span,
+#worldCupWrapDiv ul li.r4s span {
+	display: none;
+}
+
+#worldCupWrapDiv ul li.r16s span.hobby,
+#worldCupWrapDiv ul li.r8s span.intro,
+#worldCupWrapDiv ul li.r4s span.image {
+	display: block;
+}
+
+#worldCupWrapDiv ul li.r16s.r8s span.hobby,
+#worldCupWrapDiv ul li.r8s.r4s span.intro,
+#worldCupWrapDiv ul li.r4s.r2s span.image {
+	display: none;
+}

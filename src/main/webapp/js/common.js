@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	
+	// ajax 함수
+	$.jsonAjax = function(_url, _param, _func){
+		$.ajax({
+			url: _url,
+			type: 'POST',
+			data: _param,
+			success: _func
+		});
+	};
 
 	// get 파라메터 파싱
 	$.parseURL = function(key){
