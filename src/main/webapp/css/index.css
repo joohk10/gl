@@ -15,8 +15,10 @@ li {
 #wrap > div {
 	position: absolute;
 	top: 120px;
-	width: 100%;
-	min-width: 1500px;
+	left: 50%;
+	margin-left: -250px;
+	width: auto;
+	min-width: initial;
 }
 
 #wrap > div#chatWrapDiv {

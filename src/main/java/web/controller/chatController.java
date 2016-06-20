@@ -121,7 +121,6 @@ public class chatController extends commonController {
 		String guestSeq = getHash(inviteSeq + getDateStr());
 		
 		_chatRoomVO.setChatRoomSeq(roomSeq);
-		_chatRoomVO.setcDate(getDateStr());
 		chatService.insertRoom(_chatRoomVO);
 		
 		_chatRoomVO.setChatRoomSeq(roomSeq);

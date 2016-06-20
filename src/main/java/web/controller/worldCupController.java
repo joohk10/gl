@@ -43,7 +43,7 @@ public class worldCupController extends commonController {
 			_worldCupVO.setHostMemSeq(memInfo.get("seq"));
 			memberList = worldCupService.getWorldCupMember(_worldCupVO);
 			
-			if(memberList.size() < 1){
+			if(memberList.size() != 8){
 				return "worldCup";
 			}
 			// 로그 입력.
@@ -75,7 +75,7 @@ public class worldCupController extends commonController {
 		return "worldCup";
 	}
 	
-	// 이상형 월드컵 종료.
+	// 이상형 월드컵 일반 종료.
 	@RequestMapping("/worldCupRes.do")
 	public String worldCupRes(HttpServletRequest request, ModelMap model) throws Exception{
 		HttpSession session = request.getSession();
@@ -85,6 +85,9 @@ public class worldCupController extends commonController {
 		_worldCupVO.setHostMemSeq(memInfo.get("seq"));
 		worldCupService.updateWorldCupLog(_worldCupVO);
 		
-		return "redirect:./chatRoomList.do";
+		model.addAttribute("code", "success");
+		model.addAttribute("msg", "");
+		return "jsonMsg";
 	}
+	
 }

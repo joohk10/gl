@@ -18,16 +18,17 @@
 
 #worldCupWrapDiv ul li.worldCupLeftPos {
 	width: 200px;
-	height: 100px;
+	height: 190px;
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
 	display: block;
+	text-align: center;
 }
 
 #worldCupWrapDiv ul li.worldCupRightPos {
 	width: 200px;
-	height: 100px;
+	height: 190px;
 	position: absolute;
 	bottom: 0px;
 	right: 0px;

@@ -118,7 +118,7 @@
 	
 	<insert id="chatDAO.insertRoom" parameterClass="chatRoomVO">
 	<![CDATA[
-		insert into chatRoom (chatRoomSeq, cDate) values (#chatRoomSeq#, #cDate#)
+		insert into chatRoom (chatRoomSeq, cDate) values (#chatRoomSeq#, SYSTIMESTAMP)
 	]]>
 	</insert>
 	

@@ -22,11 +22,11 @@ $(document).ready(function(){
 	$.worldCupEnd = function(seq){
 		if(confirm("그린라이트를 보내시겠습니까?")){
 			$.jsonAjax('greenLightWorldCup.do', 'seq=' + seq, function(data){
-				//
+				location.href = './search.do';
 			});
 		}else{
 			$.jsonAjax('worldCupRes.do', 'seq=' + seq, function(data){
-				//
+				location.href = './search.do';
 			});
 		}
 	};
