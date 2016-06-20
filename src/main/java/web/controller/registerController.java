@@ -48,16 +48,14 @@ import javax.servlet.http.HttpServlet;
 	public String regiAct(@ModelAttribute("memberVO")memberVO _memberVO, 
 			HttpServletRequest request, ModelMap model) throws Exception{
 		
-		
-		
 		request.setCharacterEncoding("UTF-8");
 		 
 		String saveDir = request.getSession().getServletContext().getRealPath("/");
 		int maxSize = 1024*1024*100;
 		String encType = "UTF-8";
-
+		
 		MultipartRequest multi
-		= new MultipartRequest(request, saveDir, maxSize, encType, new DefaultFileRenamePolicy());
+		= new MultipartRequest(request, saveDir, maxSize, encType,new DefaultFileRenamePolicy());
 		
 		String id = multi.getParameter("id");
 		String pw = multi.getParameter("pw");
@@ -66,7 +64,9 @@ import javax.servlet.http.HttpServlet;
 		String sex = multi.getParameter("sex");
 		String hobby = multi.getParameter("hobby");
 		String intro = multi.getParameter("introd");
-		//String filen = request.getParameter("filen");
+		String filen = multi.getFilesystemName("filen");
+		
+		
 		
 		_memberVO.setId(id);
 		_memberVO.setPw(pw);
@@ -75,8 +75,9 @@ import javax.servlet.http.HttpServlet;
 		_memberVO.setsex(sex);
 		_memberVO.sethobby(hobby);
 		_memberVO.setintro(intro);
+		_memberVO.setFilen(filen);
 		
-		File file = multi.getFile("filen");
+		//File file = multi.getFile("filen");
 		
 	    memberService.insertUser(_memberVO);
 		

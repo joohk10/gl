@@ -28,6 +28,9 @@ public class memberServiceImpl implements memberService {
 	public List<memberVO> searchUser(memberVO _memberVO) throws Exception {
 		return memberDAO.searchUser(_memberVO);
 	}
+	public List<memberVO> searchUsern(memberVO _memberVO) throws Exception {
+		return memberDAO.searchUsern(_memberVO);
+	}
 	public List<memberVO> searchgreen(memberVO _memberVO) throws Exception {
 		return memberDAO.searchgreen(_memberVO);
 	}

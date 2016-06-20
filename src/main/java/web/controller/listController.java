@@ -30,6 +30,7 @@ public class listController{
 	{	
 		List<memberVO> list = memberService.searchgreen(_memberVO);
 		
+		
 		if(list.size() == 1){
 			memberVO memInfo = list.get(0);
 				Map<String, String> map = new HashMap<String, String>();
