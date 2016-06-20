@@ -18,7 +18,7 @@
 		<c:forEach var="item" items="${searchlist}">
 		<li>
 			<span class="w">
-			<img src="saveDir+${item.filen}">
+			<img src="./${item.filen }" />
 			${item.name} ${item.num}
 			<img src="images/cat2.jpg">
 			</span>

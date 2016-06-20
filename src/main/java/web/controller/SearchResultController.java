@@ -36,7 +36,7 @@ public String regiAct(@ModelAttribute("memberVO")memberVO _memberVO, HttpServlet
 	
 	_memberVO.setSearch(search);
 	
-	if(sel=="1")
+	if("1".equals(sel))
 	{
 		List<memberVO> searchlist = memberService.searchUser(_memberVO);
 		model.addAttribute("searchlist", searchlist);
