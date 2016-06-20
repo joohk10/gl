@@ -43,7 +43,7 @@
 	</select>
 	<select id="memberDAO.searchgreen" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
-		select * from greenlight
+		select tow from greenlight
 		where fromw = #seq#
 	]]>
 	</select> 
