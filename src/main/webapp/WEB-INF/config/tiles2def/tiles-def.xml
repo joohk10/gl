@@ -41,4 +41,8 @@
 	</definition>	
 	<definition name="jsonChatMsg" template="/WEB-INF/layouts/json_chat_msg_layout.jsp">
 	</definition>
+	
+	<!-- error js msg -->
+	<definition name="errorAlert" template="/WEB-INF/layouts/alert_err_msg_layout.jsp">
+	</definition>
 </tiles-definitions>

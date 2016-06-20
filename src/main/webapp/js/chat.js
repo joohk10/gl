@@ -3,16 +3,6 @@ $(document).ready(function(){
 	var _lastTime = '';
 	var timer = null;
 	
-	// ajax 함수
-	$.jsonAjax = function(_url, _param, _func){
-		$.ajax({
-			url: _url,
-			type: 'POST',
-			data: _param,
-			success: _func
-		});
-	};
-	
 	// 채팅로그 가져옴
 	$.getChatLog = function(){
 		var roomSeq = $("#roomSeq").val();
