@@ -64,6 +64,8 @@ import javax.servlet.http.HttpServlet;
 		String name = multi.getParameter("name");
 		String num = multi.getParameter("num");
 		String sex = multi.getParameter("sex");
+		String hobby = multi.getParameter("hobby");
+		String intro = multi.getParameter("introd");
 		//String filen = request.getParameter("filen");
 		
 		_memberVO.setId(id);
@@ -71,6 +73,8 @@ import javax.servlet.http.HttpServlet;
 		_memberVO.setName(name);
 		_memberVO.setnum(num);
 		_memberVO.setsex(sex);
+		_memberVO.sethobby(hobby);
+		_memberVO.setintro(intro);
 		
 		File file = multi.getFile("filen");
 		

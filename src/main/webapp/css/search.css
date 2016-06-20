@@ -4,23 +4,19 @@
 	margin: 50px auto 0px; 
 }
 #joinDiv { 
-	background-image: url('../images/bg_main.png'); 
-	background-repeat: no-repeat;
-	height: 700px;
+	height: 100px;
 	position: relative; 
 	text-align: left;
 	padding: 30px 0px 0px 30px;
 }
-/*
 #joinDiv #input_file { 
 	height: 600px;
 	position: absolute; 
 	text-align: left;
 }
-*/
 input[type=text], input[type=password],  select {
-width: 30%;
-height: 15px;
+width: 10%;
+height: 20px;
 /*입력 칸 (input field) 의 폭을 지정하기 위해, 폭 속성 (width property) 를 사용하였습니다.*/
 padding: 12px 20px;
 margin: 8px 0;
@@ -41,7 +37,7 @@ border-radius: 4px;
 box-sizing: border-box;
 }
 input[type=submit] {
-width: 50%;
+width: 5%;
 background-color: orange;
 color: white;
 padding: 14px 20px;

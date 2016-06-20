@@ -10,7 +10,7 @@
 <script>
 function insertAct(){    
     var f = document.form;        
-    if(!!f.name.value && !!f.num.value && !!f.id.value && !!f.pw.value) 
+    if(!!f.name.value && !!f.num.value && !!f.id.value && !!f.pw.value && !!f.hobby.value&& !!f.intro.value) 
     {
         f.action = "register.do";
         f.submit();            
@@ -86,7 +86,7 @@ $(document).ready(function(){
         h: 115
     };
  
-    $('#input_file').setPreview(opt);
+    $('#inputfile').setPreview(opt);
 });
 </script>
 </head>
@@ -96,23 +96,27 @@ $(document).ready(function(){
 <div id="wrap">
 <div id="joinDiv">
 	<form name="form" method="POST" action="" id="joinform" enctype="multipart/form-data">
+	
 	<div id="profilePreview">
-		<img src="images/profile.jpg" id="img_preview">
-		<input type="file" value="프로필 사진" name="filen" id="input_file"/>
+		<img src="images/profile.jpg" id="img_preview"><br>
+		<b>사진</b><input type="file" value="프로필 사진" name="filen" id="inputfile"/>
 	</div>
+	<br>
 	<b>성별</b>
 	<input type="radio" name="sex" value=0 checked>남자
 	<input type="radio" name="sex" value=1>여자<br><br>
-	<b>이름<br>
+	<b>이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="name" id="uName" /><br>
-	학번<br>
+	학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="num" id="uNum" /><br>
-	아이디<br>
+	아이디&nbsp;&nbsp;&nbsp;
 	<input type="text" name="id" id="uId" /><br>
-	비밀번호<br>
+	비밀번호
 	<input type="password" name="pw" id="uPw" /><br>
+	<b>취미&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="hobby" id="uHobby" /><br>
 	자기소개</b><br>
-	<textarea rows="5" cols="30" name="contents" name="introd" id="introd">자기소개를 입력해주세요.</textarea><br><br>
+	<textarea rows="5" cols="10" name="introd" id="intro"></textarea><br>
 	<input type="submit" value="가입" id="joinSubmit" onclick="insertAct()"/>
 	</form>
 </div>

@@ -81,16 +81,16 @@ public class memberVO {
 	public void setsex(String sex) {
 		this.sex = sex;
 	}
-	public String getHobby() {
+	public String gethobby() {
 		return hobby;
 	}
-	public void setHobby(String hobby) {
+	public void sethobby(String hobby) {
 		this.hobby = hobby;
 	}
-	public String getIntro() {
+	public String getintro() {
 		return intro;
 	}
-	public void setIntro(String intro) {
+	public void setintro(String intro) {
 		this.intro = intro;
 	}
 	public String getArea() {

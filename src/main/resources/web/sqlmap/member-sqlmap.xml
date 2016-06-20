@@ -23,18 +23,25 @@
 	<select id="memberDAO.searchUser" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
 		select * from member
-		where #sel# = #search#
+		where name = #search#
 	]]>
 	</select>
-	<select id="memberDAO.selectUserInfoBySeq" parameterClass="memberVO" resultMap="userList">
+	<select id="memberDAO.select
+	UserInfoBySeq" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
 		select * from member
 		where seq = #seq#
 	]]>
+	</select>
+	<select id="memberDAO.searchgreen" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from greenlight
+		where fromw = #seq#
+	]]>
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">
 	<![CDATA[
-		insert into MEMBER(ID, PW, NAME, NUM, SEX) values (#id#, #pw#, #name#, #num#, #sex#)
+		insert into MEMBER(ID, PW, NAME, NUM, SEX, HOBBY, INTRO) values (#id#, #pw#, #name#, #num#, #sex#, #hobby#, #intro#)
 	]]>
 	</insert>
 </sqlMap>
