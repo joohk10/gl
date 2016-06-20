@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
-
+<%String saveDir = request.getSession().getServletContext().getRealPath("/");%>
 <div>
 	<form method="POST" action="SearchResult.do" id="searchform">
 	<select name="sel">
@@ -18,8 +18,9 @@
 		<c:forEach var="item" items="${searchlist}">
 		<li>
 			<span class="w">
-			<img src="D:\egov\eGovFrameDev-3.5.1-64bit\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\gl\${item.seq}">
+			<img src="saveDir+${item.filen}">
 			${item.name} ${item.num}
+			<img src="images/cat2.jpg">
 			</span>
 		</li>
 		</c:forEach>

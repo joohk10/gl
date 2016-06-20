@@ -13,6 +13,7 @@
 		<!--<result property="birth" column="BIRTH" />-->
 		<result property="mlevel" column="MLEVEL" />
 		<result property="num" column="NUM" />
+		<result property="filen" column="FILEN" />
 	</resultMap>
 	
 	<select id="memberDAO.selectUser" parameterClass="memberVO" resultMap="userList">
@@ -48,7 +49,7 @@
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">
 	<![CDATA[
-		insert into MEMBER(ID, PW, NAME, NUM, SEX, HOBBY, INTRO) values (#id#, #pw#, #name#, #num#, #sex#, #hobby#, #intro#)
+		insert into MEMBER(ID, PW, NAME, NUM, SEX, HOBBY, INTRO, FILEN) values (#id#, #pw#, #name#, #num#, #sex#, #hobby#, #intro#, #filen#)
 	]]>
 	</insert>
 </sqlMap>
