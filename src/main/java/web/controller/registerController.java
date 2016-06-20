@@ -48,8 +48,6 @@ import javax.servlet.http.HttpServlet;
 	public String regiAct(@ModelAttribute("memberVO")memberVO _memberVO, 
 			HttpServletRequest request, ModelMap model) throws Exception{
 		
-		
-		
 		request.setCharacterEncoding("UTF-8");
 		 
 		String saveDir = request.getSession().getServletContext().getRealPath("/");

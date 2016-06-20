@@ -5,25 +5,27 @@
 <div>
 	<form method="POST" action="SearchResult.do" id="searchform">
 	<select name="sel">
-    <option value="">검색항목</option>
-    <option value="name">이름</option>
-    <option value="num">학번</option>
+    <option value="1">이름</option>
+    <option value="2">학번</option>
 	</select>
 	<input type="text" name="search" id="search" />
 	<input type="submit" value="검색">
 	</form>
 	<c:choose>
 	<c:when test="${fn:length(searchlist) > 0}">
+	사진 이름 학번 선택
 	<ul class="pList">
 		<c:forEach var="item" items="${searchlist}">
 		<li>
-			<span class="w">${item.name } 님과의 대화</span>
+			<span class="w">
+			<img src="D:\egov\eGovFrameDev-3.5.1-64bit\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\gl\${item.seq}">
+			${item.name} ${item.num}
+			</span>
 		</li>
 		</c:forEach>
 	</ul>
 	</c:when>
 	<c:otherwise>
-	생성된 채팅방이 없습니다.
 	</c:otherwise>
 </c:choose>
 </div>

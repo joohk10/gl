@@ -12,6 +12,7 @@
 		<result property="name" column="NAME" />
 		<!--<result property="birth" column="BIRTH" />-->
 		<result property="mlevel" column="MLEVEL" />
+		<result property="num" column="NUM" />
 	</resultMap>
 	
 	<select id="memberDAO.selectUser" parameterClass="memberVO" resultMap="userList">
@@ -24,6 +25,12 @@
 	<![CDATA[
 		select * from member
 		where name = #search#
+	]]>
+	</select>
+	<select id="memberDAO.searchUsern" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from member
+		where num = #search#
 	]]>
 	</select>
 	<select id="memberDAO.select

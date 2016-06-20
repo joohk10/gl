@@ -33,12 +33,19 @@ public String regiAct(@ModelAttribute("memberVO")memberVO _memberVO, HttpServlet
 {
 	String sel = request.getParameter("sel");
 	String search = request.getParameter("search");
-	_memberVO.setSel(sel);
+	
 	_memberVO.setSearch(search);
 	
-	List<memberVO> searchlist = memberService.searchUser(_memberVO);
-	
-	model.addAttribute("searchlist", searchlist);
+	if(sel=="1")
+	{
+		List<memberVO> searchlist = memberService.searchUser(_memberVO);
+		model.addAttribute("searchlist", searchlist);
+	}
+	else
+	{
+		List<memberVO> searchlist = memberService.searchUsern(_memberVO);
+		model.addAttribute("searchlist", searchlist);
+	}
 	
 	return "search";
 }
