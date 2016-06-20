@@ -65,7 +65,7 @@ import javax.servlet.http.HttpServlet;
 		String num = multi.getParameter("num");
 		String sex = multi.getParameter("sex");
 		String hobby = multi.getParameter("hobby");
-		String intro = multi.getParameter("intro");
+		String intro = multi.getParameter("introd");
 		//String filen = request.getParameter("filen");
 		
 		_memberVO.setId(id);

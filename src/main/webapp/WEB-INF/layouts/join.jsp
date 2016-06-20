@@ -116,7 +116,7 @@ $(document).ready(function(){
 	<b>취미&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="hobby" id="uHobby" /><br>
 	자기소개</b><br>
-	<textarea rows="5" cols="10" name="contents" name="intro" id="intro"></textarea><br>
+	<textarea rows="5" cols="10" name="introd" id="intro"></textarea><br>
 	<input type="submit" value="가입" id="joinSubmit" onclick="insertAct()"/>
 	</form>
 </div>
