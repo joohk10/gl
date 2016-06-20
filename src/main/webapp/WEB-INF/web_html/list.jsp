@@ -2,14 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
 <div>
-	<form method="POST" action="tt.php" id="chatform">
-	<ul>
-	<li id="p1" >테스트</li>
-	<input id="seq" name="seq" type="hidden" value="6" />
-	<li id="p2" >200921327</li>
-	<input id="num" name="num" type="hidden" value="200921327" />
+	<c:choose>
+	<c:when test="${fn:length(greenlist) > 0}">
+	<ul class="pList">
+		<c:forEach var="item" items="${greenlist}">
+		<li>
+			<span class="w">${item.memName } 님과의 대화</span>
+			<span class="b"><a href="chatRoom.do?seq=${item.chatRoomSeq }">입장</a></span>
+		</li>
+		</c:forEach>
 	</ul>
-	<input type="submit" value="submit">
-	</div>
+	</c:when>
+	<c:otherwise>
+	생성된 채팅방이 없습니다.
+	</c:otherwise>
+</c:choose>
 	</form>
 </div>

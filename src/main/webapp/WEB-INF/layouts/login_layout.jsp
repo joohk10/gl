@@ -26,11 +26,10 @@
 <img src=images/index.jpg usemap="#main">
 	<map name="main">
 		<area shape="rect" coords="130,98,200,118" href="./search.do"/>
-		<area shape="rect" coords="145,123,200,145" href="./chatRoomList.do"/>
+		<area shape="rect" coords="150,118,210,148" href="./chatRoomList.do"/>
 		<area shape="rect" coords="145,157,200,178" href="./list.do"/>
 		<area shape="rect" coords="95,187,220,210" href="./worldCup.do"/>
 		<area shape="rect" name="logout" coords="947,22,1032,45" href="./logoutAct.do"/>
-		<area shape="rect" coords="145,98,200,118" href="c"/>
 		<area shape="rect" coords="103,233,154,283" href="d"/>
 		<area shape="rect" coords="170,267,200,278" href="e"/>
 	</map>
