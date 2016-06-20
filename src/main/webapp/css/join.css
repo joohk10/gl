@@ -18,7 +18,7 @@
 }
 input[type=text], input[type=password],  select {
 width: 30%;
-height: 20px;
+height: 15px;
 /*입력 칸 (input field) 의 폭을 지정하기 위해, 폭 속성 (width property) 를 사용하였습니다.*/
 padding: 12px 20px;
 margin: 8px 0;

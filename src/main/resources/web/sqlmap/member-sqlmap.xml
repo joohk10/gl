@@ -31,10 +31,16 @@
 		select * from member
 		where seq = #seq#
 	]]>
+	</select>
+	<select id="memberDAO.searchgreen" parameterClass="memberVO" resultMap="userList">
+	<![CDATA[
+		select * from greenlight
+		where from = #seq#
+	]]>
 	</select> 
 	<insert id="memberDAO.insertUser" parameterClass="memberVO">
 	<![CDATA[
-		insert into MEMBER(ID, PW, NAME, NUM, SEX) values (#id#, #pw#, #name#, #num#, #sex#)
+		insert into MEMBER(ID, PW, NAME, NUM, SEX, HOBBY, INTRO) values (#id#, #pw#, #name#, #num#, #sex#, #hobby#, #intro#)
 	]]>
 	</insert>
 </sqlMap>

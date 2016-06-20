@@ -103,16 +103,18 @@ $(document).ready(function(){
 	<b>성별</b>
 	<input type="radio" name="sex" value=0 checked>남자
 	<input type="radio" name="sex" value=1>여자<br><br>
-	<b>이름<br>
+	<b>이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="name" id="uName" /><br>
-	학번<br>
+	학번&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" name="num" id="uNum" /><br>
-	아이디<br>
+	아이디&nbsp;&nbsp;&nbsp;
 	<input type="text" name="id" id="uId" /><br>
-	비밀번호<br>
+	비밀번호
 	<input type="password" name="pw" id="uPw" /><br>
+	<b>취미&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" name="hobby" id="uHobby" /><br>
 	자기소개</b><br>
-	<textarea rows="5" cols="30" name="contents" name="introd" id="introd">자기소개를 입력해주세요.</textarea><br><br>
+	<textarea rows="5" cols="10" name="contents" name="intro" id="intro">자기소개를 입력해주세요.</textarea><br><br><br>
 	<input type="submit" value="가입" id="joinSubmit" onclick="insertAct()"/>
 	</form>
 </div>
