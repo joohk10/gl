@@ -12,7 +12,7 @@
 		<li class="r16s notView" seq="${item.seq}">
 			<span class="hobby">${item.hobby }</span>
 			<span class="intro">${item.intro }</span>
-			<span class="image"><img src="http://img.naver.net/static/www/u/2013/0731/nmms_224940510.gif" /></span>
+			<span class="image"><img src="./${item.filen }" /></span>
 		</li>
 		</c:forEach>
 	</ul>
