@@ -66,7 +66,17 @@ import javax.servlet.http.HttpServlet;
 		String intro = multi.getParameter("introd");
 		String filen = multi.getFilesystemName("filen");
 		
-		
+		if("".equals(id) || id == null ||
+				"".equals(pw) || pw == null ||
+				"".equals(name) || name == null ||
+				"".equals(num) || num == null ||
+				"".equals(sex) || sex == null ||
+				"".equals(hobby) || hobby == null ||
+				"".equals(intro) || intro == null ||
+				"".equals(filen) || filen == null){
+			model.addAttribute("msg", "내용을 모두 채워주세요");
+			return "errorAlert";
+		}
 		
 		_memberVO.setId(id);
 		_memberVO.setPw(pw);
