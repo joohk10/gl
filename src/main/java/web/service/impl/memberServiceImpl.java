@@ -37,4 +37,7 @@ public class memberServiceImpl implements memberService {
 	public void insertUser(memberVO _memberVO) throws Exception {
 		memberDAO.insertUser(_memberVO);
 	}
+	public void updateUser(memberVO _memberVO) throws Exception {
+		memberDAO.updateUser(_memberVO);
+	}
 }

@@ -30,8 +30,8 @@
 		<area shape="rect" coords="145,157,200,178" href="./list.do"/>
 		<area shape="rect" coords="95,187,220,210" href="./worldCup.do"/>
 		<area shape="rect" name="logout" coords="947,22,1032,45" href="./logoutAct.do"/>
-		<area shape="rect" coords="103,233,154,283" href="d"/>
-		<area shape="rect" coords="170,267,200,278" href="e"/>
+		<area shape="rect" coords="103,233,154,283" href="./editMember.do"/>
+		<area shape="rect" coords="170,267,200,278" href="./editMember.do"/>
 	</map>
 	
 	<tiles:insertAttribute name="body"/>

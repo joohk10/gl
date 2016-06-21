@@ -14,6 +14,9 @@
 		<result property="mlevel" column="MLEVEL" />
 		<result property="num" column="NUM" />
 		<result property="filen" column="FILEN" />
+		<result property="hobby" column="hobby" />
+		<result property="intro" column="intro" />
+		<result property="sex" column="sex" />
 	</resultMap>
 	
 	<select id="memberDAO.selectUser" parameterClass="memberVO" resultMap="userList">
@@ -34,8 +37,7 @@
 		where num = #search#
 	]]>
 	</select>
-	<select id="memberDAO.select
-	UserInfoBySeq" parameterClass="memberVO" resultMap="userList">
+	<select id="memberDAO.selectUserInfoBySeq" parameterClass="memberVO" resultMap="userList">
 	<![CDATA[
 		select * from member
 		where seq = #seq#
@@ -53,4 +55,20 @@
 		insert into MEMBER(ID, PW, NAME, NUM, SEX, HOBBY, INTRO, FILEN) values (#id#, #pw#, #name#, #num#, #sex#, #hobby#, #intro#, #filen#)
 	]]>
 	</insert>
+	<update id="memberDAO.updateUser" parameterClass="memberVO">
+	<![CDATA[
+		update member
+		set
+			id = #id#,
+			pw = #pw#,
+			name = #name#,
+			num = #num#,
+			sex = #sex#,
+			hobby = #hobby#,
+			intro = #intro#,
+			filen = #filen#
+		where
+			seq = #seq#
+	]]>
+	</update>
 </sqlMap>

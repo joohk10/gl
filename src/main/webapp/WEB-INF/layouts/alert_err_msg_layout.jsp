@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
 alert("${msg}");
+<c:if test="${memInfo.move}">
+locaiton.href = '${memInfo.move}';
+</c:if>
 history.back();
 </script>
 </head>

@@ -16,8 +16,9 @@ public class joinController {
 	protected final static Logger log = Logger.getLogger(joinController.class);
 	
 	@RequestMapping("/join.do")
-	
-public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{		
+	public String mainPage(HttpServletRequest request, ModelMap model) throws Exception{		
 			return "join";
 	}
+	
+	
 }

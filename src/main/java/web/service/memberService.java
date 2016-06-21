@@ -10,4 +10,5 @@ public interface memberService {
 	public List<memberVO> searchUsern(memberVO _memberVO) throws Exception;
 	public List<memberVO> searchgreen(memberVO _memberVO) throws Exception;
 	public void insertUser(memberVO _memberVO) throws Exception;
+	public void updateUser(memberVO _memberVO) throws Exception;
 }

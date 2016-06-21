@@ -31,7 +31,9 @@ public class memberDAO {
 		return sqlMapClientTemplate.queryForList("memberDAO.searchgreen", _memberVO);
 	}
 	public void insertUser(memberVO _memberVO) throws Exception {
-		System.out.println("log");
 		sqlMapClientTemplate.insert("memberDAO.insertUser", _memberVO);
+	}
+	public void updateUser(memberVO _memberVO) throws Exception {
+		sqlMapClientTemplate.update("memberDAO.updateUser", _memberVO);
 	}
 }
