@@ -18,7 +18,7 @@ li {
 	left: 50%;
 	margin-left: -250px;
 	width: auto;
-	min-width: initial;
+	min-width: 500px;
 }
 
 #wrap > div#chatWrapDiv {
