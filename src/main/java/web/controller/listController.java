@@ -25,6 +25,7 @@ public class listController{
 	
 	@Autowired
 	protected memberService memberService;
+	@Autowired
 	protected greenLightService greenLightService;
 	
 	protected final static Logger log = Logger.getLogger(indexController.class);
@@ -43,10 +44,10 @@ public class listController{
 			_greenLightVO.setFromw(seq);
 			
 			List<memberVO> greenlist = memberService.searchgreen(_memberVO);
-			//List<greenLightVO> greencount = greenLightService.countLight(_greenLightVO);
+			List<greenLightVO> greencount = greenLightService.countLight(_greenLightVO);
 			
 			model.addAttribute("greenlist", greenlist);
-			//model.addAttribute("greencount", greencount);
+			model.addAttribute("greencount", greencount);
 		}	
 		return "list";
 	}
