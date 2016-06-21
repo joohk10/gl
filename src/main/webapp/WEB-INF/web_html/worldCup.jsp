@@ -10,9 +10,9 @@
 	<ul class="pList">
 		<c:forEach var="item" items="${memberList}">
 		<li class="r16s notView" seq="${item.seq}">
-			<span class="hobby">${item.hobby }</span>
+			<div style="border:1px solid; padding:10px;"><span class="hobby">${item.hobby }</span>
 			<span class="intro">${item.intro }</span>
-			<span class="image"><img src="./${item.filen }" /></span>
+			<span class="image"><img src="./${item.filen }" /></span></div>
 		</li>
 		</c:forEach>
 	</ul>

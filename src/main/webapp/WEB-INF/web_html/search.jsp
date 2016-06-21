@@ -31,7 +31,13 @@
 			<table width="60" height="50" background="images/cat2.jpg">
 			<tr>
 			<td style="padding-top:11px; padding-right:25px;">
-			<img src="images/green.jpg" onclick="location.href='green.do?seq=${item.seq}'">
+			<img src="images/green.jpg" onclick="button_click()">
+			<script>
+			function button_click() {
+				alert("그린라이트를 보냈습니다.");
+				location.href='green.do?seq=${item.seq}';
+			}
+			</script>
 			</td>
 			</tr>
 			</table>
