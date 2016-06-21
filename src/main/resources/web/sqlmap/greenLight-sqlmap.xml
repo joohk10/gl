@@ -19,6 +19,15 @@
 	]]>
 	</select>
 	
+	<select id="greenLightDAO.countLight" parameterClass="greenLightVO" resultMap="chkGreenLight">
+	<![CDATA[
+		select count(*) as cnt
+		from greenLight
+		where
+			tow = #fromw#
+	]]>
+	</select>
+	
 	<select id="greenLightDAO.chkDoubleLight" parameterClass="greenLightVO" resultMap="chkGreenLight">
 	<![CDATA[
 		select count(*) as cnt
