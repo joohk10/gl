@@ -2,6 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/layouts/taglib.jsp" %>
 <div>
+   <c:choose>
+	<c:when test="${fn:length(greencount) > 0}">
+	<ul class="pList">
+		<c:forEach var="item" items="${greencount}">
+		<li>
+		<h3>
+			<span class="w">
+			나에게 그린라이트를 보낸 사람의 수는 ${item.cnt}명입니다.<br><br>
+			</span>
+		</h3>
+		</li>
+		</c:forEach>
+		</ul>
+		</b>
+	</c:when>
+	</c:choose>
 	<c:choose>
 	<c:when test="${fn:length(greenlist) > 0}">
 	<b><h1>
@@ -36,21 +52,5 @@
 	</c:when>
 	<c:otherwise>
 	</c:otherwise>
-	</c:choose>
-	<c:choose>
-	<c:when test="${fn:length(greencount) > 0}">
-	<ul class="pList">
-		<c:forEach var="item" items="${greencount}">
-		<li>
-		<h3>
-			<span class="w">
-			나에게 그린라이트를 보낸 사람의 수는 ${item.cnt}명입니다.
-			</span>
-		</h3>
-		</li>
-		</c:forEach>
-		</ul>
-		</b>
-	</c:when>
 	</c:choose>
 </div>
