@@ -40,13 +40,13 @@ public class listController{
 			_memberVO.setSeq(seq);
 			
 			greenLightVO _greenLightVO = new greenLightVO();
-			_greenLightVO.setFromw(memInfo.get("seq"));
+			_greenLightVO.setFromw(seq);
 			
 			List<memberVO> greenlist = memberService.searchgreen(_memberVO);
-			List<greenLightVO> greencount = greenLightService.countLight(_greenLightVO);
+			//List<greenLightVO> greencount = greenLightService.countLight(_greenLightVO);
 			
 			model.addAttribute("greenlist", greenlist);
-			model.addAttribute("greencount", greencount);
+			//model.addAttribute("greencount", greencount);
 		}	
 		return "list";
 	}

@@ -24,7 +24,7 @@
 		select count(*) as cnt
 		from greenLight
 		where
-			tow = #fromw#
+			tow = (#fromw#)
 	]]>
 	</select>
 	
@@ -35,15 +35,6 @@
 		where
 			(fromw = #fromw# AND tow = #tow#) OR
 			(fromw = #tow# AND tow = #fromw#)
-	]]>
-	</select>
-	
-	<select id="greenLightDAO.chkDoubleLight" parameterClass="greenLightVO" resultMap="chkGreenLight">
-	<![CDATA[
-		select count(*) as cnt
-		from greenLight
-		where
-			(tow = #fromw#) 
 	]]>
 	</select>
 	
